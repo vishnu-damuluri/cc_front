@@ -50,6 +50,7 @@
 
 /* ... (Previous CSS code) ... */
 
+/* Hide the image text by default */
 .masonry-item .image-text {
   position: absolute;
   bottom: 0;
@@ -63,7 +64,36 @@
   transition: opacity 0.9s ease-in-out;
   font-size: 29px;
   font-weight: bold;
+  pointer-events: none; /* Ensure the text doesn't interfere with hover events */
 }
+
+/* Show the tagline when the image text disappears */
+.masonry-item:hover .image-text {
+  opacity: 0;
+}
+
+/* Show the tagline when the image text disappears */
+.masonry-item:hover .tagline {
+  opacity: 1;
+}
+
+/* Initial styles for the tagline */
+.tagline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 70px 40px 70px; /* Default padding for larger screens */
+  background: linear-gradient(rgba(0, 0, 0, 0), #1f1c30);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  opacity: 0; /* Hide the tagline initially */
+  transition: opacity 0.9s ease-in-out;
+  font-size: 20px;
+  font-weight: bold;
+  pointer-events: none; /* Ensure the tagline doesn't interfere with hover events */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -114,7 +144,7 @@
 }
 .banner {
   height: 105vh;
-  background: url("assets/ban.png") center/cover no-repeat; /* Replace 'your-background-image.jpg' with your actual background image */
+  background: url("assets/") center/cover no-repeat; /* Replace 'your-background-image.jpg' with your actual background image */
   color: rgb(255, 255, 255);
   background-size: 500px 500px;
   z-index: 2;
@@ -150,7 +180,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
+  background: rgba(0, 0, 0, 0); /* Adjust the opacity as needed */
 }
 
 
@@ -358,20 +388,27 @@ body {
    
           <div class="collapse navbar-collapse flex-grow-0 ml-2" id="collapseNav">
              
-              <a href="team.html" class="nav-item nav-link text-light h6 mx-3 my-auto">
-               Team
+              <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
+               schedule
               </a>
-              <a href="contact.html" class="nav-item nav-link text-light h6 mx-3 my-auto">
+              <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
                Contact
               </a>
-              <a href="updates.html" class="nav-item nav-link text-light h6 mx-3 my-auto">
+              <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
                Updates
              </a>
+             <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
+              Login
+            </a>
+            <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
+              competitions
+            </a>
              <div class="navbar-nav">
               <a href="#reg" class="btn btn-outline-warning rounded-pill">
                 Register
                 </a>
            </div>
+           <br>
          </div>
        </div>
      </nav>
@@ -382,40 +419,49 @@ body {
     <div class="container banner d-flex align-items-center">
         <video autoplay preload muted loop poster="video-poster.jpg" id="background-video">
 <!--             <source src="assets/pexels-florian-lovis-5749164 (2160p)4.mp4" type="video/mp4"> -->
-            <source src="assets/cc.mp4" type="video/mp4">
+            <source src="assets/CCRE.mp4 " type="video/mp4">
             <!-- Your browser does not support the video tag. -->
         </video>
         <!-- Overlay div for dimming effect -->
-        <div class="overlay"></div>
+        <div class=""></div>
     </div>
 
-
-</section>
-<!-- New section for muted and autoplay YouTube embed -->
-<!-- New section for muted, autoplay, and looped YouTube embed -->
-<section id="youtube-video" class="py-5">
-  <div class="container">
-          <div class="row align-items-center my-5 py-5 mx-2">
-              <div class="embed-responsive embed-responsive-16by9">
-                  <!-- Corrected URL with mute and autoplay parameters -->
-                  <iframe id="youtube-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/nYAPy_Z7jLQ?si=fATdL9UetboWBa5&mute=1&autoplay=1" allowfullscreen></iframe>
-              </div>
-          </div>
+    <!-- partner logos -->
+    <div class="container text-center py-5">
+      <h1 class="font-weight-bold">
+        <span class="text-info"><a style="color:#ffffff">Our Partners</a></span>
+      </h1>
+      <div class="lead pb-6" style="color: black;">
+        
       </div>
   </div>
+
 </section>
 
-<!-- JavaScript code for looping the video -->
-<script>
-// Get the iframe element
-var youtubeIframe = document.getElementById('youtube-iframe');
-
-// Add event listener for when the video ends
-youtubeIframe.addEventListener('ended', function() {
-    // Reload the video to loop it
-    youtubeIframe.src += '&autoplay=1';
-});
-</script>
+<!-- New section for muted and autoplay YouTube embed -->
+<div class="logos">
+  <style>
+    .logos-slide img {
+width: 80px; /* Set your desired width */
+height: auto; /* Maintain aspect ratio */
+display: inline-block;
+  animation: 30s slide infinite linear; /* Decrease the duration to 20 seconds */
+}
+  </style>
+  <div class="logos-slide">
+    <img src="assets/sp1.jpg"/>
+    <img src="assets/sp2.png" />
+    <img src="assets/sp3.png" />
+    <img src="assets/sp4.jpg" />
+    <img src="assets/sp5.png" />
+    <img src="assets/sp6.png" />
+    <img src="assets/sp7.png" />
+  </div>
+  <script>
+    var copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".logos").appendChild(copy);
+  </script>
+</div>
 
 
 
@@ -454,28 +500,34 @@ youtubeIframe.addEventListener('ended', function() {
         </div>
       </section>
       <br>
-      <div class="logos">
-        <style>
-          .logos-slide img {
-    width: 80px; /* Set your desired width */
-    height: auto; /* Maintain aspect ratio */
-}
-        </style>
-        <div class="logos-slide">
-          <img src="assets/sp1.jpg"/>
-          <img src="assets/sp2.png" />
-          <img src="assets/sp3.png" />
-          <img src="assets/sp4.jpg" />
-          <img src="assets/sp5.png" />
-          <img src="assets/sp6.png" />
-          <img src="assets/sp7.png" />
-        </div>
+      <!-- New section for muted, autoplay, and looped YouTube embed -->
+<section id="youtube-video" class="py-5">
+  <div class="container">
+          <div class="row align-items-center my-5 py-5 mx-2">
+              <div class="embed-responsive embed-responsive-16by9">
+                  <!-- Corrected URL with mute and autoplay parameters -->
+                  <iframe id="youtube-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/Vls3ipEspps?si=fATdL9UetboWBa5&mute=1&autoplay=1&rel=0" allowfullscreen></iframe>
+              </div>
+          </div>
       </div>
+  </div>
+</section>
+
+<!-- JavaScript code for looping the video -->
+<script>
+// Get the iframe element
+var youtubeIframe = document.getElementById('youtube-iframe');
+
+// Add event listener for when the video ends
+youtubeIframe.addEventListener('ended', function() {
+    // Reload the video to loop it
+    youtubeIframe.src += '&autoplay=1';
+});
+</script>
+
+     
   
-      <script>
-        var copy = document.querySelector(".logos-slide").cloneNode(true);
-        document.querySelector(".logos").appendChild(copy);
-      </script>
+      
       <a></a>
       <br>
       <section id="about">
@@ -521,48 +573,135 @@ youtubeIframe.addEventListener('ended', function() {
  
     
     <section id="services">
+      <!-- partner logos -->
+    
+  </div>
         <div class="container">
+          <div class="container text-center py-2">
+            <h1 class="font-weight-bold">
+              <span class="text-info"><a style="color:#ffffff">Events</a></span>
+            </h1>
+            <div class="lead pb-6" style="color: rgb(212, 212, 212);">
+              Where the fun starts
+            </div>
             <div class="masonry-container">
                 <!-- Image 1 -->
                 <div class="masonry-item">
                     <img src="assets/img1.jpg" alt="Image 1">
-                    <div class="image-text" style="color: #fff;">Video Editing Workshop </div>
+                    <div class="image-text" style="color: #fff;">Wildlife photography masterclass➜ <br>
+                  </div>
+                  <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
                 </div>
                 <!-- Image 2 -->
                 <div class="masonry-item">
                     <img src="assets/img3.jpg" alt="Image 2">
-                    <div class="image-text" style="color: rgb(255, 255, 255);">Photography Workshop</div>
+                    <div class="image-text" style="color: rgb(255, 255, 255);">Feature Film screening➜</div>
                 </div>
                 <!-- Image 3 -->
                 <div class="masonry-item">
                     <img src="assets/img2.jpg" alt="Image 3">
-                    <div class="image-text" style="color: rgb(255, 255, 255);">Filming Workshop</div>
+                    <div class="image-text" style="color: rgb(255, 255, 255);">Talkshow ➜</div>
                 </div>
                 <!-- Image 4 -->
                 <div class="masonry-item">
                     <img src="assets/vzj.jpg" alt="Image 4">
-                    <div class="image-text" style="color: azure;">Master classes</div>
+                    <div class="image-text" style="color: azure;">Shortfilm Screening ➜</div>
                 </div>
                 <!-- Image 5 -->
                 <div class="masonry-item">
                     <img src="assets/img4.jpg" alt="Image 5">
-                    <div class="image-text" style="color: azure;">Fun events</div>
+                    <div class="image-text" style="color: azure;">World film screening➜</div>
                 </div>
                 <!-- Image 6 -->
                 <div class="masonry-item">
                     <img src="assets/img5.jpg" alt="Image 6">
-                    <div class="image-text" style="color: azure;">Interviews</div>
+                    <div class="image-text" style="color: azure;">Culturals ➜</div>
                 </div>
+                 <!-- Image 1 -->
+                 <div class="masonry-item">
+                  <img src="assets/img1.jpg" alt="Image 1">
+                  <div class="image-text" style="color: #fff;">Fashion walk➜ <br>
+                </div>
+                <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
+              </div>
+               <!-- Image 1 -->
+               <div class="masonry-item">
+                <img src="assets/img3.jpg" alt="Image 1">
+                <div class="image-text" style="color: #fff;">Outdoor screening ➜ <br>
+              </div>
+              <div class="tagline" style="color: #fff;" id="des">Where creativity meets technology</div> <!-- Add the tagline here -->
+            </div>
+             <!-- Image 1 -->
+             <div class="masonry-item">
+              <img src="assets/img1.jpg" alt="Image 1">
+              <div class="image-text" style="color: #fff;">Anime Screening➜ <br>
+            </div>
+            <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
+          </div>
+           <!-- Image 1 -->
+           <div class="masonry-item">
+            <img src="assets/img4w.jpg" alt="Image 1">
+            <div class="image-text" style="color: #fff;">Stand-up➜ <br>
+          </div>
+          <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
+        </div>
             </div>
         </div>
+        <style>
+          .fade-img {
+              opacity: 1;
+              transition: opacity 0.5s ease-in-out;
+          }
+      
+          .fade-img:hover {
+              opacity: 0.7;
+          }
+      </style>
+     <!-- Modal Structure -->
+<div class="modal" id="eventModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Event Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="eventDescription"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.masonry-item').click(function(){
+      // Get the event description from the clicked masonry item's tagline class
+      var eventDescription = $(this).find('.tagline').text();
+      // Set the event description in the modal
+      $('#eventDescription').text(eventDescription);
+      // Show the modal
+      $('#eventModal').modal('show');
+    });
+  });
+</script>
+
+
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<style>
+  
+</style>
       </section>
-   <br>
 
 <!-- Title Section -->
 <div class="container bg-image position-relative" style="background-image: url('assets/btn.jpg');" id="reg">
   <!-- Black translucent overlay -->
   <div class="overlay"></div>
-  <div class="row text-center align-items-center my-5 py-5">
+  <div class="row text-center align-items-center my-2 py-5">
     <div class="col-12 d-flex flex-column justify-content-center align-items-center">
       <a style="color: rgb(0, 0, 0);">--</a>
       <div class="font-weight-italic" style="font-size: 20px;">
@@ -613,7 +752,7 @@ youtubeIframe.addEventListener('ended', function() {
             </a>
             <br>
             <aclass="d-block" style="color: rgb(255, 255, 255);">
-              gstudioclub@gitam.in
+              gstudioclub@gitam.edu
                 <i class="d-block" style="color: rgb(255, 255, 255);"></i>
             
             
