@@ -34,11 +34,15 @@
     
             function updateNavbarBackground() {
                 if (window.scrollY > 50 || document.body.classList.contains('show-navbar')) {
-                    navbar.classList.add('solid-bg');
-                    navbar.classList.remove('transparent-bg');
+                  navbar.classList.add('solid-bg');
+                  navbar.classList.remove('transparent-bg');
+                  navbar.style.transition = 'background-color 0.3s linear';
+                  navbar.style.backgroundColor = '#322d4b';
                 } else {
                     navbar.classList.remove('solid-bg');
                     navbar.classList.add('transparent-bg');
+                    navbar.style.transition = 'background-color 0.65s linear';
+                    navbar.style.backgroundColor = 'transparent';
                 }
             }
     
@@ -62,7 +66,7 @@
 
         <!-- Navbar -->
         
-    <nav id="myNavbar"class="navbar navbar-expand-md fixed-top" style="background-transparent;">
+    <nav id="myNavbar"class="navbar navbar-expand-md fixed-top" style="background: transparent;">
         <div class="container my-2">
           <a class="navbar-brand ml-2 md-2"><img src="assets/cclogobmin.png" alt="test img"
          style="width: 170px; height: 50px;">
@@ -108,7 +112,7 @@
    <!-- banner section -->
 <section>
   <div class="container banner d-flex align-items-center video-wrap">
-      <video autoplay preload playsinline muted loop poster="video-poster.jpg" id="background-video">
+      <video autoplay preload="yes" playsinline muted loop poster="video-poster.jpg" id="background-video">
           <!-- Default video source -->
           <source src="assets/CCRE.mp4" type="video/mp4">
       </video>
