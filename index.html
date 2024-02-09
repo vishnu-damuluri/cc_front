@@ -27,320 +27,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
-
-    <style>
-        body {
-  background-color: #3a355c;
-}
-
-.masonry-container {
-  margin: 30px;
-}
-
-.masonry-item {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  overflow: hidden;
-}
-
-.masonry-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.6s ease-in-out;
-}
-
-/* ... (Previous CSS code) ... */
-
-/* Hide the image text by default */
-.masonry-item .image-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 70px 40px 70px; /* Default padding for larger screens */
-  background: linear-gradient(rgba(0, 0, 0, 0), #1f1c30);
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  opacity: 1;
-  transition: opacity 0.9s ease-in-out;
-  font-size: 29px;
-  font-weight: bold;
-  pointer-events: none; /* Ensure the text doesn't interfere with hover events */
-}
-
-/* Show the tagline when the image text disappears */
-.masonry-item:hover .image-text {
-  opacity: 0;
-}
-
-/* Show the tagline when the image text disappears */
-.masonry-item:hover .tagline {
-  opacity: 1;
-}
-
-/* Initial styles for the tagline */
-.tagline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 70px 40px 70px; /* Default padding for larger screens */
-  background: linear-gradient(rgba(0, 0, 0, 0), #1f1c30);
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  opacity: 0; /* Hide the tagline initially */
-  transition: opacity 0.9s ease-in-out;
-  font-size: 20px;
-  font-weight: bold;
-  pointer-events: none; /* Ensure the tagline doesn't interfere with hover events */
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .masonry-item .image-text {
-    padding: 20px 30px 20px 30px; /* Adjusted padding for medium screens */
-    font-size: 20px; /* Adjusted font size for medium screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .masonry-item .image-text {
-    padding: 15px 20px 15px 20px; /* Adjusted padding for small screens */
-    font-size: 16px; /* Adjusted font size for small screens */
-  }
-}
-
-/* ... (Remaining CSS code) ... */
-
-.masonry-item:hover img {
-  transform: scale(1.1);
-}
-
-.masonry-item:hover .image-text {
-  opacity: 0;
-}
-
-@media (min-width: 576px) {
-  .masonry-container {
-    column-count: 2;
-    column-gap: 15px;
-  }
-}
-
-@media (min-width: 768px) {
-  .masonry-container {
-    column-count: 3;
-  }
-}
-
-@media (min-width: 992px) {
-  .masonry-container {
-    column-count: 3;
-  }
-}
-.navbar-brand img {
-  max-height: 100px; /* Set the desired maximum height */
-  width: auto;
-}
-.banner {
-  height: 105vh;
-  background: url("assets/") center/cover no-repeat; /* Replace 'your-background-image.jpg' with your actual background image */
-  color: rgb(255, 255, 255);
-  background-size: 500px 500px;
-  z-index: 2;
-}
-
-.banner h1 {
-  font-size: 3rem; /* Adjust the font size as needed */
-  margin-bottom: 20px;
-}
-
-.banner p {
-  font-size: 1.2rem; /* Adjust the font size as needed */
-  margin-bottom: 30px;
-}
-
-.banner a {
-  font-size: 1.2rem; /* Adjust the font size as needed */
-}
-#background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.overlay {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0); /* Adjust the opacity as needed */
-}
-
-
-
-.register button {
-  --color: #836dac;
-  font-family: inherit;
-  display: inline-block;
-  width: 8em;
-  height: 2.6em;
-  line-height: 2.5em;
-  /* margin: 20px; */
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  z-index: 1;
-  font-size: 17px;
-  border-radius: 6px;
-  font-weight: 500;
-  color: var(--color);
-}
-.register button:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.register button:hover {
-  color: #fff;
-}
-
-.register button:before {
-  top: 100%;
-  left: 100%;
-  transition: all 0.7s;
-}
-
-.register button:hover:before {
-  top: -30px;
-  left: -30px;
-}
-
-.register button:active:before {
-  background: #836dac;
-  transition: background 0s;
-}
-#home #nav .container {
-  max-width: 100vw;
-}
-/* Hide scrollbar */
-body::-webkit-scrollbar {
-    display: none;
-}
-
-.transparent-bg {
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.5s ease-in-out;
-}
-
-.solid-bg {
-    background-color: #322d4b; /* Set your desired solid background color */
-}
-/* Initial styles for navbar buttons */
-.navbar-transparent .navbar-nav li a {
-    color: #ffffff !important;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #f2f2f2;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.logos {
-  overflow: hidden;
-  padding: 30px 0;
-  background: #7b70a5;
-  white-space: nowrap;
-  position: relative;
-}
-
-.logos:before,
-.logos:after {
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-
-.logos:before {
-  left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #7b70a5);
-}
-
-.logos:after {
-  right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #7b70a5);
-}
-
-/* .logos:hover .logos-slide {
-  animation-play-state: paused;
-} */
-
-
-
-.logos-slide {
-  display: inline-block;
-  animation: 35s slide infinite linear;
-}
-
-.logos-slide img {
-  height: 50px;
-  margin: 0 40px;
-}
- @font-face {
-        font-family: 'Titania';
-        src: 
-             url('assets/titania/Titania-Regular.ttf') format('truetype'),   /* Modern Browsers */
-         
-        /* You can add more src declarations for different font formats */
-    }
-
-    body {
-        font-family: 'Titania', sans-serif; /* Use the font family */
-    }
-    .container {
-    max-width: 100%; /* Set the container width to 100% */
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var navbar = document.getElementById('myNavbar');
@@ -372,7 +59,6 @@ body {
 
 <body style="background-color: #1f1c30;">
   <!-- The Modal -->
-  
 
         <!-- Navbar -->
         
@@ -405,7 +91,7 @@ body {
              <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
               Login
             </a>
-            <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
+            <a href="#cp" class="nav-item nav-link text-light h6 mx-3 my-auto">
               Competitions
             </a>
              <div class="navbar-nav">
@@ -430,9 +116,8 @@ body {
       <div class=""></div>
   </div>
 </section>
-
 <!-- JavaScript to load other elements after the video has finished loading -->
-<script>
+<script async>
   // Function to change video source based on screen width
   function changeVideoSource() {
       var video = document.getElementById('background-video');
@@ -544,8 +229,7 @@ display: inline-block;
             <br>          
           <div class="col-md-6 col-12"> 
             <br>
-            <a href="https://drive.google.com/file/d/15HuTVpHed7gEZT4hecvNLejtG5uxGL5Z/view?usp=sharing">
-            <img src="assets/cc poster.jpg" class="img-fluid" ></a>
+            <img src="assets/cc poster.jpg" class="img-fluid" style="max-width: 60%; height: auto;" >
           </div>
       
           </div>
@@ -622,9 +306,7 @@ youtubeIframe.addEventListener('ended', function() {
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                     <div>
-                        <a href="https://drive.google.com/file/d/15HuTVpHed7gEZT4hecvNLejtG5uxGL5Z/view?usp=sharing">
-                            <img src="assets/cc poster.jpg" class="img-fluid" >
-                        </a>
+                            <img src="assets/cc poster.jpg" class="img-fluid" style="max-width: 60%; height: auto;" >
                     </div>
                 </div>
                 
@@ -818,7 +500,7 @@ $('.masonry-item').click(function(){
   </style>
 </div>
 
-<section id="services">
+<section id="cp">
   <!-- partner logos -->
 
 </div>
@@ -970,9 +652,9 @@ $('.masonry-item').click(function(){
             </a>
           </div>
         </div>
-        <div class="text-muted py-3">
+        <!-- <div class="text-muted py-3">
           <p>Copyright © ChalanaChitram Pvt.Ltd 2022 | All Rights Reserved</p>
-        </div>
+        </div> -->
       </div>
     </footer>
     <!-- Bootstrap JS and Popper.js -->
