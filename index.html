@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3a355c"> <!-- Replace #FF5733 with your desired accent color -->
+
     <title>GSTUDIO - CC</title>
     <link
     rel="stylesheet"
@@ -24,6 +26,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+
     <style>
         body {
   background-color: #3a355c;
@@ -273,7 +277,7 @@ body {
 
 .logos {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 30px 0;
   background: #7b70a5;
   white-space: nowrap;
   position: relative;
@@ -325,13 +329,12 @@ body {
     body {
         font-family: 'Titania', sans-serif; /* Use the font family */
     }
-    /* .container {
+    .container {
     max-width: 100%; /* Set the container width to 100% */
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-} */
 
 
 
@@ -368,12 +371,14 @@ body {
 </head>
 
 <body style="background-color: #1f1c30;">
+  <!-- The Modal -->
+  
 
         <!-- Navbar -->
         
     <nav id="myNavbar"class="navbar navbar-expand-md fixed-top" style="background-transparent;">
         <div class="container my-2">
-          <a class="navbar-brand ml-2 md-2"><img src="assets/cclogob.png" alt="test img"
+          <a class="navbar-brand ml-2 md-2"><img src="assets/cclogobmin.png" alt="test img"
          style="width: 170px; height: 50px;">
         </a>
          
@@ -389,7 +394,7 @@ body {
           <div class="collapse navbar-collapse flex-grow-0 ml-2" id="collapseNav">
              
               <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
-               schedule
+               Schedule
               </a>
               <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
                Contact
@@ -401,7 +406,7 @@ body {
               Login
             </a>
             <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
-              competitions
+              Competitions
             </a>
              <div class="navbar-nav">
               <a href="#reg" class="btn btn-outline-warning rounded-pill">
@@ -414,17 +419,64 @@ body {
      </nav>
     
 
-    <!-- banner -->
-    <section>
-    <div class="container banner d-flex align-items-center">
-        <video autoplay preload muted loop poster="video-poster.jpg" id="background-video">
-<!--             <source src="assets/pexels-florian-lovis-5749164 (2160p)4.mp4" type="video/mp4"> -->
-            <source src="assets/CCRE.mp4 " type="video/mp4">
-            <!-- Your browser does not support the video tag. -->
-        </video>
-        <!-- Overlay div for dimming effect -->
-        <div class=""></div>
-    </div>
+   <!-- banner section -->
+<section>
+  <div class="container banner d-flex align-items-center video-wrap">
+      <video autoplay preload muted loop poster="video-poster.jpg" id="background-video">
+          <!-- Default video source -->
+          <source src="assets/CCRE.mp4" type="video/mp4">
+      </video>
+      <!-- Overlay div for dimming effect -->
+      <div class=""></div>
+  </div>
+</section>
+
+<!-- JavaScript to load other elements after the video has finished loading -->
+<script>
+  // Function to change video source based on screen width
+  function changeVideoSource() {
+      var video = document.getElementById('background-video');
+      var screenWidth = window.innerWidth;
+
+      // Check if screen width is less than 992px (mobile)
+      if (screenWidth < 992) {
+          video.src = 'assets/ccm.mp4'; // Mobile video source
+      } else {
+          video.src = 'assets/CCRE.mp4'; // Desktop video source
+      }
+      
+      // Reload the video
+      video.load();
+      // Once the video has finished loading, remove the loading class from the body
+      document.body.classList.remove('loading');
+  }
+
+  // Call the function initially
+  changeVideoSource();
+
+  // Event listener for window resize
+  window.addEventListener('resize', function() {
+      changeVideoSource();
+  });
+
+  // Add a class to the body to indicate that the page is loading
+  document.body.classList.add('loading');
+</script>
+
+<!-- Your remaining website content here, wrapped in a div with a class "content" -->
+<div class="content">
+  <!-- Your other HTML elements here -->
+</div>
+
+<!-- CSS to hide content until the video has loaded -->
+<style>
+  .content {
+      display: none;
+  }
+  body.loading .content {
+      display: block;
+  }
+</style>
 
     <!-- partner logos -->
     <div class="container text-center py-5">
@@ -500,18 +552,53 @@ display: inline-block;
         </div>
       </section>
       <br>
-      <!-- New section for muted, autoplay, and looped YouTube embed -->
+     <!-- New section for muted, autoplay, and looped YouTube embed -->
 <section id="youtube-video" class="py-5">
   <div class="container">
-          <div class="row align-items-center my-5 py-5 mx-2">
-              <div class="embed-responsive embed-responsive-16by9">
-                  <!-- Corrected URL with mute and autoplay parameters -->
-                  <iframe id="youtube-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/Vls3ipEspps?si=fATdL9UetboWBa5&mute=1&autoplay=1&rel=0" allowfullscreen></iframe>
-              </div>
-          </div>
+    <div class="container text-center py-2">
+      <h1 class="font-weight-bold">
+        <span class="text-info"><a style="color:#ffffff">Chalana Chitram</a></span>
+      </h1>
+      <div class="lead pb-6" style="color: rgb(212, 212, 212);">
+        2023
       </div>
+      <div class="row align-items-center py-2 mx-2">
+        <div class="embed-responsive embed-responsive-16by9">
+          <!-- Corrected URL with mute and autoplay parameters -->
+          <iframe id="youtube-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/Vls3ipEspps?si=fATdL9UetboWBa5&mute=1&autoplay=0&rel=0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </div>
+  <script>// Function to start playing the video when it comes into view
+    function playVideo(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                var iframe = entry.target.querySelector('iframe');
+                var src = iframe.getAttribute('src');
+                if (src.indexOf('autoplay=0') !== -1) {
+                    // Replace autoplay=0 with autoplay=1 to start playing the video
+                    src = src.replace('autoplay=0', 'autoplay=1');
+                    iframe.setAttribute('src', src);
+                    // Unobserve the target to avoid unnecessary checks
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }
+    
+    // Create a new Intersection Observer instance
+    var observer = new IntersectionObserver(playVideo, { root: null, threshold: 0.5 });
+    
+    // Target the video section
+    var videoSection = document.getElementById('youtube-video');
+    
+    // Observe the video section
+    observer.observe(videoSection);
+    
+    </script>
 </section>
+
 
 <!-- JavaScript code for looping the video -->
 <script>
@@ -572,130 +659,131 @@ youtubeIframe.addEventListener('ended', function() {
  <br>
  
     
-    <section id="services">
-      <!-- partner logos -->
-    
-  </div>
-        <div class="container">
-          <div class="container text-center py-2">
-            <h1 class="font-weight-bold">
-              <span class="text-info"><a style="color:#ffffff">Events</a></span>
-            </h1>
-            <div class="lead pb-6" style="color: rgb(212, 212, 212);">
-              Where the fun starts
+ <section id="services">
+  <!-- partner logos -->
+
+</div>
+    <div class="container">
+      <div class="container text-center py-2">
+        <h1 class="font-weight-bold">
+          <span class="text-info"><a style="color:#ffffff">Events</a></span>
+        </h1>
+        <div class="lead pb-6" style="color: rgb(212, 212, 212);">
+          Where the fun starts
+        </div>
+        <div class="masonry-container">
+            <!-- Image 1 -->
+            <div class="masonry-item">
+                <img src="assets/img1.jpg" alt="Image 1">
+                <div class="image-text" style="color: #fff;">Wildlife photography masterclass➜ <br>
+              </div>
+              <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
             </div>
-            <div class="masonry-container">
-                <!-- Image 1 -->
-                <div class="masonry-item">
-                    <img src="assets/img1.jpg" alt="Image 1">
-                    <div class="image-text" style="color: #fff;">Wildlife photography masterclass➜ <br>
-                  </div>
-                  <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
-                </div>
-                <!-- Image 2 -->
-                <div class="masonry-item">
-                    <img src="assets/img3.jpg" alt="Image 2">
-                    <div class="image-text" style="color: rgb(255, 255, 255);">Feature Film screening➜</div>
-                </div>
-                <!-- Image 3 -->
-                <div class="masonry-item">
-                    <img src="assets/img2.jpg" alt="Image 3">
-                    <div class="image-text" style="color: rgb(255, 255, 255);">Talkshow ➜</div>
-                </div>
-                <!-- Image 4 -->
-                <div class="masonry-item">
-                    <img src="assets/vzj.jpg" alt="Image 4">
-                    <div class="image-text" style="color: azure;">Shortfilm Screening ➜</div>
-                </div>
-                <!-- Image 5 -->
-                <div class="masonry-item">
-                    <img src="assets/img4.jpg" alt="Image 5">
-                    <div class="image-text" style="color: azure;">World film screening➜</div>
-                </div>
-                <!-- Image 6 -->
-                <div class="masonry-item">
-                    <img src="assets/img5.jpg" alt="Image 6">
-                    <div class="image-text" style="color: azure;">Culturals ➜</div>
-                </div>
-                 <!-- Image 1 -->
-                 <div class="masonry-item">
-                  <img src="assets/img1.jpg" alt="Image 1">
-                  <div class="image-text" style="color: #fff;">Fashion walk➜ <br>
-                </div>
-                <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
-              </div>
-               <!-- Image 1 -->
-               <div class="masonry-item">
-                <img src="assets/img3.jpg" alt="Image 1">
-                <div class="image-text" style="color: #fff;">Outdoor screening ➜ <br>
-              </div>
-              <div class="tagline" style="color: #fff;" id="des">Where creativity meets technology</div> <!-- Add the tagline here -->
+            <!-- Image 2 -->
+            <div class="masonry-item">
+                <img src="assets/img3.jpg" alt="Image 2">
+                <div class="image-text" style="color: rgb(255, 255, 255);">Feature Film screening➜</div>
+            </div>
+            <!-- Image 3 -->
+            <div class="masonry-item">
+                <img src="assets/img2.jpg" alt="Image 3">
+                <div class="image-text" style="color: rgb(255, 255, 255);">Talkshow ➜</div>
+            </div>
+            <!-- Image 4 -->
+            <div class="masonry-item">
+                <img src="assets/vzj.jpg" alt="Image 4">
+                <div class="image-text" style="color: azure;">Shortfilm Screening ➜</div>
+            </div>
+            <!-- Image 5 -->
+            <div class="masonry-item">
+                <img src="assets/img4.jpg" alt="Image 5">
+                <div class="image-text" style="color: azure;">World film screening➜</div>
+            </div>
+            <!-- Image 6 -->
+            <div class="masonry-item">
+                <img src="assets/img5.jpg" alt="Image 6">
+                <div class="image-text" style="color: azure;">Culturals ➜</div>
             </div>
              <!-- Image 1 -->
              <div class="masonry-item">
               <img src="assets/img1.jpg" alt="Image 1">
-              <div class="image-text" style="color: #fff;">Anime Screening➜ <br>
+              <div class="image-text" style="color: #fff;">Fashion walk➜ <br>
             </div>
             <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
           </div>
            <!-- Image 1 -->
            <div class="masonry-item">
-            <img src="assets/img4w.jpg" alt="Image 1">
-            <div class="image-text" style="color: #fff;">Stand-up➜ <br>
+            <img src="assets/img3.jpg" alt="Image 1">
+            <div class="image-text" style="color: #fff;">Outdoor screening ➜ <br>
           </div>
-          <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
+          <div class="tagline" style="color: #fff;" id="des">Where creativity meets technology</div> <!-- Add the tagline here -->
         </div>
-            </div>
+         <!-- Image 1 -->
+         <div class="masonry-item">
+          <img src="assets/img1.jpg" alt="Image 1">
+          <div class="image-text" style="color: #fff;">Anime Screening➜ <br>
         </div>
-        <style>
-          .fade-img {
-              opacity: 1;
-              transition: opacity 0.5s ease-in-out;
-          }
-      
-          .fade-img:hover {
-              opacity: 0.7;
-          }
-      </style>
-     <!-- Modal Structure -->
-<div class="modal" id="eventModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Event Description</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
       </div>
-      <div class="modal-body">
-        <p id="eventDescription"></p>
+       <!-- Image 1 -->
+       <div class="masonry-item">
+        <img src="assets/img5.jpg" alt="Image 1">
+        <div class="image-text" style="color: #fff;">Stand-up➜ <br>
       </div>
+      <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
     </div>
+        </div>
+    </div>
+    <style>
+      .fade-img {
+          opacity: 1;
+          transition: opacity 0.5s ease-in-out;
+      }
+  
+      .fade-img:hover {
+          opacity: 0.7;
+      }
+  </style>
+ <!-- Modal Structure -->
+<div class="modal" id="eventModal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Event Description</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
+  <div class="modal-body">
+    <p id="eventDescription"></p>
+  </div>
+</div>
+</div>
 </div>
 
 <script>
-  $(document).ready(function(){
-    $('.masonry-item').click(function(){
-      // Get the event description from the clicked masonry item's tagline class
-      var eventDescription = $(this).find('.tagline').text();
-      // Set the event description in the modal
-      $('#eventDescription').text(eventDescription);
-      // Show the modal
-      $('#eventModal').modal('show');
-    });
-  });
+$(document).ready(function(){
+$('.masonry-item').click(function(){
+  // Get the event description from the clicked masonry item's tagline class
+  var eventDescription = $(this).find('.tagline').text();
+  // Set the event description in the modal
+  $('#eventDescription').text(eventDescription);
+  // Show the modal
+  $('#eventModal').modal('show');
+});
+});
 </script>
 
 
-  <!-- jQuery -->
+<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <style>
-  
+
 </style>
-      </section>
+  </section>
+
 
 <!-- Title Section -->
 <div class="container bg-image position-relative" style="background-image: url('assets/btn.jpg');" id="reg">
@@ -723,8 +811,115 @@ youtubeIframe.addEventListener('ended', function() {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
-  z-index: ; /* Ensure the overlay is above the background image */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 0 ; /* Ensure the overlay is above the background image */
+}
+
+  </style>
+</div>
+
+<section id="services">
+  <!-- partner logos -->
+
+</div>
+    <div class="container">
+      <div class="container text-center py-2">
+        <h1 class="font-weight-bold">
+          <span class="text-info"><a style="color:#ffffff">Competitions</a></span>
+        </h1>
+        <div class="lead pb-6" style="color: rgb(212, 212, 212);">
+          Where the fun starts
+        </div>
+        <div class="masonry-container">
+            <!-- Image 1 -->
+            <div class="masonry-item">
+                <img src="assets/cp1.jpg" alt="Image 1">
+               
+            </div>
+            <!-- Image 2 -->
+            <div class="masonry-item">
+                <img src="assets/cp2.jpg" alt="Image 2">
+            </div>
+            
+    <style>
+      .fade-img {
+          opacity: 1;
+          transition: opacity 0.5s ease-in-out;
+      }
+  
+      .fade-img:hover {
+          opacity: 0.7;
+      }
+  </style>
+ <!-- Modal Structure -->
+<div class="modal" id="eventModal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Event Description</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p id="eventDescription"></p>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+$('.masonry-item').click(function(){
+  // Get the event description from the clicked masonry item's tagline class
+  var eventDescription = $(this).find('.tagline').text();
+  // Set the event description in the modal
+  $('#eventDescription').text(eventDescription);
+  // Show the modal
+  $('#eventModal').modal('show');
+});
+});
+</script>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+  </section>
+
+
+<!-- Title Section -->
+<div class="container bg-image position-relative" style="background-image: url('assets/download.jpg');" id="reg">
+  <!-- Black translucent overlay -->
+  <div class="overlay"></div>
+  <div class="row text-center align-items-center my-2 py-5">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+      <a style="color: rgb(0, 0, 0);">--</a>
+      <div class="font-weight-italic" style="font-size: 20px;">
+        <br>
+        <br>
+        <p6 style="color: rgb(255, 255, 255); font-size: xxx-large; text-align: center;">Compete with the best creators across the nation at ChalanaChitram </p6>
+      </div>
+      <br>
+      <br>
+      <a class="btn btn-warning btn-large rounded-pill" href="https://gevents.gitam.edu/registration/NTc3" style="font-size: large; font-weight: 500;"> ‎  Sign-up ➜  ‎ </a>
+      <br>
+      <br>
+    </div>
+  </div>
+  <style>
+    .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 0 ; /* Ensure the overlay is above the background image */
 }
 
   </style>
@@ -736,23 +931,23 @@ youtubeIframe.addEventListener('ended', function() {
     <footer>
       <div class="container-fluid text-center" style="background-color: #0d0721;">
         <div class="py-5">
-          <h2 style="color: rgb(255, 255, 255);">Interested in working with Us?</h2>
-          <a href="mailto:gstudioclub@gitam.edu?subject=I wanna be part of another tech revolution!" class="btn btn-outline-light btn-lg mt-3">
-            Let's talk
-            </a>
+          <h2 style="color: rgb(255, 255, 255);"></h2>
+          <!-- <a href="mailto:gstudioclub@gitam.edu?subject=I wanna be part of another tech revolution!" class="btn btn-outline-light btn-lg mt-3">
+            
+            </a> -->
          </div>
          <div class="row">
           <div class="col-12 col-md-4 py-3">
             <h5 class=" pb-3" style="color: rgb(255, 255, 255);">More links</h5>
             
             <a href="#" class="d-block" style="color: rgb(255, 255, 255);">Home</a>
-            <a href="mailto:gstudioclub@gitam.edu?subject=I wanna get in Talks with you!" class="d-block" style="color: rgb(255, 255, 255);">Contact Us</a>
-            <a href="mailto:gstudioclub@gitam.edu?subject=Here is a suggestion!" class="d-block" style="color: rgb(255, 255, 255);">
+            <a href="mailto:gstudioclub@gitam.in?subject=I wanna get in Talks with you!" class="d-block" style="color: rgb(255, 255, 255);">Contact Us</a>
+            <a href="mailto:gstudioclub@gitam.in?subject=Here is a suggestion!" class="d-block" style="color: rgb(255, 255, 255);">
               Write a suggestion!  <i class="fas fa-heart" style="color: rgb(255, 255, 255);"></i>
             </a>
             <br>
             <aclass="d-block" style="color: rgb(255, 255, 255);">
-              gstudioclub@gitam.edu
+              gstudioclub@gitam.in
                 <i class="d-block" style="color: rgb(255, 255, 255);"></i>
             
             
