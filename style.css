@@ -298,13 +298,7 @@ body {
           body {
               font-family: 'Titania', sans-serif; /* Use the font family */
           }
-          .container {
-          max-width: 100%; /* Set the container width to 100% */
-          padding-right: 15px;
-          padding-left: 15px;
-          margin-right: auto;
-          margin-left: auto;
-          }
+          
           body {
                   background-image: url('assets/BG.png'); /* Replace 'path/to/your/image.jpg' with the path to your image file */
                   background-repeat: repeat; /* This will cause the image to repeat both horizontally and vertically */
