@@ -1,3 +1,7 @@
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
 body {
         background-color: #3a355c;
       }
@@ -385,5 +389,4 @@ body {
               
               .pushable:focus:not(:focus-visible) {
                 outline: none;
-              }
-              
+              }          
