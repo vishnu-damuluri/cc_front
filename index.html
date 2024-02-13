@@ -94,9 +94,9 @@
               <!-- <a href="#" class="nav-item nav-link text-light h6 mx-3 my-auto">
                Updates
              </a> -->
-             <a href="login.html" class="nav-item nav-link text-light h6 mx-3 my-auto">
+             <!-- <a href="login.html" class="nav-item nav-link text-light h6 mx-3 my-auto">
               Login
-            </a>
+            </a> -->
             <a href="#cp" class="nav-item nav-link text-light h6 mx-3 my-auto">
               Competitions
             </a>
@@ -355,7 +355,6 @@ display: inline-block;
                 <img src="assets/wildlife.jpg" alt="Image 1">
                 <div class="image-text" style="color: #fff;">Wildlife photography masterclass➜ <br>
               </div>
-              <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
             </div>
             <!-- Image 2 -->
             <div class="masonry-item">
@@ -378,14 +377,14 @@ display: inline-block;
               <img src="assets/fashionwalk.jpg" alt="Image 1">
               <div class="image-text" style="color: #fff;">Fashion walk➜ <br>
             </div>
-            <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
+            <!-- <div class="tagline" style="color: #fff;">Where creativity meets technology</div> Add the tagline here -->
           </div>
            <!-- Image 1 -->
            <div class="masonry-item">
             <img src="assets/stars.jpg" alt="Image 1">
             <div class="image-text" style="color: #fff;">Movie under the stars➜ <br>
           </div>
-          <div class="tagline" style="color: #fff;" id="des">Where creativity meets technology</div> <!-- Add the tagline here -->
+          <!-- <div class="tagline" style="color: #fff;" id="des">Where creativity meets technology</div> Add the tagline here -->
         </div>
         
        <!-- Image 1 -->
@@ -393,14 +392,12 @@ display: inline-block;
         <img src="assets/standup.jpg" alt="Image 1">
         <div class="image-text" style="color: #fff;">Stand-up➜ <br>
       </div>
-      <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
     </div>
      <!-- Image 1 -->
      <div class="masonry-item">
       <img src="assets/filmmasterclass.jpg" alt="Image 1">
       <div class="image-text" style="color: #fff;">Film Masterclass with celebrity➜ <br>
     </div>
-    <div class="tagline" style="color: #fff;">Where creativity meets technology</div> <!-- Add the tagline here -->
   </div>
         </div>
     </div>
@@ -415,34 +412,11 @@ display: inline-block;
       }
   </style>
  <!-- Modal Structure -->
-<div class="modal" id="eventModal" tabindex="-1" role="dialog">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title">Event Description</h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p id="eventDescription"></p>
-  </div>
-</div>
+
 </div>
 </div>
 
-<script>
-$(document).ready(function(){
-$('.masonry-item').click(function(){
-  // Get the event description from the clicked masonry item's tagline class
-  var eventDescription = $(this).find('.tagline').text();
-  // Set the event description in the modal
-  $('#eventDescription').text(eventDescription);
-  // Show the modal
-  $('#eventModal').modal('show');
-});
-});
-</script>
+
 
 <!-- cc23 -->
 
@@ -665,36 +639,11 @@ $('.masonry-item').click(function(){
             });
           });
         </script>
-        
- <!-- Modal Structure -->
-<div class="modal" id="eventModal" tabindex="-1" role="dialog">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title">Event Description</h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p id="eventDescription"></p>
-  </div>
-</div>
+ 
 </div>
 </div>
 
-<script>
-$(document).ready(function(){
-$('.masonry-item').click(function(){
-  // Get the event description from the clicked masonry item's tagline class
-  var eventDescription = $(this).find('.tagline').text();
-  // Set the event description in the modal
-  $('#eventDescription').text(eventDescription);
-  // Show the modal
-  $('#eventModal').modal('show');
-});
-});
-</script>
+
 
 
 <!-- jQuery -->
