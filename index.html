@@ -71,6 +71,36 @@
 
 <body style="background-color: #1f1c30;">
    
+<!-- Pop-up content -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">X</span>
+      <h2>Filimy Flashback!</h2>
+      <br>
+      <img src="assets/screen_post.jpg" alt="Special Offer Poster" width="300" preload="yes">
+      <br>
+      <button onclick="register()" class="btn btn-warning btn-large rounded-pill my-2" >Register Now</button>
+  </div>
+</div>
+
+<script>
+  // Function to display the pop-up when the page loads
+  window.onload = function() {
+      document.getElementById('popup').style.display = 'block';
+  }
+
+  // Function to close the pop-up
+  function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+  }
+
+  // Function to handle registration
+  function register() {
+      // Redirecting to the registration page
+      window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSd4fyGnmqg2EdTcGVPuJOM3v85msZ_A1F42sHy7uNFwN2dO9A/viewform?usp=sf_link";
+  }
+</script>
+
     <nav id="myNavbar"class="navbar navbar-expand-md fixed-top" style="background: transparent;">
         <div class="container my-2">
           <a class="navbar-brand ml-2 md-2 "><img src="assets/cclogobmin.png" alt="test img"
@@ -172,16 +202,6 @@
   <!-- Your other HTML elements here -->
 </div>
 
-<!-- CSS to hide content until the video has loaded -->
-<style>
-  .content {
-      display: none;
-  }
-  body.loading .content {
-      display: block;
-  }
-</style>
-
     <!-- partner logos -->
     <div class="container text-center py-5">
       <h1 class="font-weight-bold">
@@ -196,14 +216,7 @@
 
 <!-- New section for muted and autoplay YouTube embed -->
 <div class="logos">
-  <style>
-    .logos-slide img {
-width: 80px; /* Set your desired width */
-height: auto; /* Maintain aspect ratio */
-display: inline-block;
-  animation: 30s slide infinite linear; /* Decrease the duration to 20 seconds */
-}
-  </style>
+ 
   <div class="logos-slide">
     <img src="assets/sp1.jpg"/>
     <img src="assets/sp2.png" />
